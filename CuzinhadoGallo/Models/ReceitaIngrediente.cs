@@ -1,12 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CuzinhadoGallo.Models
+namespace CuzinhadoGallo.Models;
+
+[Table("ReceitaIngrediente")]
+public class ReceitaIngrediente
 {
-    public class ReceitaIngrediente
-    {
-        
-    }
+    [Key,Column(Order = 1)]
+    public int ReceitaId { get; set; }
+    [ForeignKey("ReceitaId")]
+
+    public Receita Receita { get; set; }
+    [Key, Column(Order = 2)]
+    public int IngredienteId { get; set; }
+    [ForeignKey("IngredienteId")]
+    public Ingrediente Ingrediente { get; set; }
+
+    [Required]
+    [StringLength(30)]
+    public string Quantidade { get; set; }
+    
+    [StringLength(200)]
+    public string Preparo { get; set; }
+    
 }
