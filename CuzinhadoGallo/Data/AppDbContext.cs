@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace CuzinhadoGallo.Data;
  public class AppDbContext : IdentityDbContext
 {
@@ -24,8 +23,7 @@ namespace CuzinhadoGallo.Data;
         AppDbSeed seed = new(builder);
 
         builder.Entity<ReceitaIngrediente>()
-            .Haskey(ri => new {ri.ReceitaId, ri.IngredienteId});
+            .HasKey(ri => new { ri.ReceitaId, ri.IngredienteId });
     }
          
-    
 }
