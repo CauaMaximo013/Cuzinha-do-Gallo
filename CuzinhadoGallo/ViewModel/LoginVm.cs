@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CuzinhadoGallo.ViewModel
+namespace CuzinhadoGallo.ViewModel;
 
-public class LoginVm
+public class LoginVM
 {
     [Display(Name = "Email ou Nome de Usuário", Prompt = "Informe seu Email ou Nome de Usuário")]
     [Required(ErrorMessage = "Por favor, informe seu Email ou nome de usuário")]
@@ -10,7 +10,7 @@ public class LoginVm
 
     [Display(Name = "Senha de Acesso", Prompt = "********")]
     [Required(ErrorMessage = "Por favor, informe sua senha")]
-    [DataType(DataType.PassWord)]
+    [DataType(DataType.Password)]
     public string Senha { get; set; }
 
     [Display(Name = "Manter Conectado?")]
